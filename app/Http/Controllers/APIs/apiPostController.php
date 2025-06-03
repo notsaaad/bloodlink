@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class apiPostController extends Controller
 {
-    function postAmbulancecars(Request $request){
+    function postDonors(Request $request){
         $validator = Validator::make($request->all(), [
             'first_name'   => 'required|string|max:50',
             'last_name'    => 'required|string|max:50',
