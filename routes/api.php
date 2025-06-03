@@ -27,3 +27,11 @@ Route::get('/Donor', [APIsController::class, 'Donor']);
 Route::get('/Employee', [APIsController::class, 'Employee']);
 Route::get('/Hospital', [APIsController::class, 'Hospital']);
 Route::get('/Patient', [APIsController::class, 'Patient']);
+
+
+
+Route::controller(apiPostController::class)->prefix('post')->group(function(){
+
+    Route::post('/ambulancecars', 'postAmbulancecars');
+
+});
