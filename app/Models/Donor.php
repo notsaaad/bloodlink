@@ -13,7 +13,7 @@ class Donor extends Model
     public $timestamps = false;
     protected $fillable = [
       'id',
-      'frist_name',
+      'first_name',
       'last_name',
       'national_id',
       'phone_number',
