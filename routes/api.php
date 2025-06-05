@@ -34,5 +34,6 @@ Route::get('/Patient', [APIsController::class, 'Patient']);
 Route::controller(apiPostController::class)->prefix('/post')->group(function(){
 
     Route::post('/donor', 'postDonors');
+    Route::post('/patient', 'postPatient');
 
 });

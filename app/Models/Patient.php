@@ -17,9 +17,11 @@ class Patient extends Model
         'first_name',
         'last_name',
         'phone_number',
+        'password',
         'blood_type',
         'birth_date',
         'address',
+        'gender',
     ];
     public function bloodbanks()
     {

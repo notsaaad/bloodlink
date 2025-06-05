@@ -20,6 +20,8 @@ class Donor extends Model
       'blood_type',
       'birth_date',
       'address',
+      'gender',
+      'passowrd'
     ];
 
     public function bloodbanks()
