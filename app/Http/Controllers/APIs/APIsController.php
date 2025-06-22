@@ -9,6 +9,7 @@ use App\Models\Hospital;
 use App\Models\Bloodbank;
 use App\Models\Ambulancecar;
 use Illuminate\Http\Request;
+use App\Models\BloodbankManager;
 use App\Http\Controllers\Controller;
 
 class APIsController extends Controller
@@ -38,5 +39,10 @@ class APIsController extends Controller
   function Patient(){
     $Patient = Patient::get();
     return response()->json($Patient);
+  }
+
+  function BankManagers(){
+    $managers = BloodbankManager::get();
+    return response()->json($managers);
   }
 }

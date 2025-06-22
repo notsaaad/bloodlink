@@ -5,6 +5,7 @@ namespace App\Http\Controllers\APIs;
 use App\Models\Donor;
 use App\Models\Patient;
 use Illuminate\Http\Request;
+use App\Models\BloodbankManager;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
@@ -44,5 +45,20 @@ class apiPostController extends Controller
 
       $Patient = Patient::create($request->all());
       return response()->json(['message' => 'Donor created successfully', 'data' => $Patient], 201);
+  }
+
+
+  function BankManagers(Request $request){
+    $validated = $request->validate([
+      'name'         => 'required',
+      'national_id'  => 'required|unique:bloodbank_managers,national_id',
+      'password'     => 'required|string|min:8|confirmed',
+      'email'        => 'required',
+      'bloodbank_id' => 'required'
+  ]);
+    $validated['password'] = bcrypt($validated['password']);
+
+      $BloodbankManager = BloodbankManager::create($request->all());
+      return response()->json(['message' => 'Bank Manager created successfully', 'data' => $BloodbankManager], 201);
   }
 }
